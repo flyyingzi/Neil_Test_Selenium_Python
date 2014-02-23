@@ -1,4 +1,4 @@
 neilpytest
 ==========
 
-automated test by using code language python.
+Automated test by using code language python.
