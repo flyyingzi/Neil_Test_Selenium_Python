@@ -1,2 +1,3 @@
-/.idea
-v2ex/
+/.idea/*
+/v2ex/*
+!/v2ex
