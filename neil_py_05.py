@@ -4,27 +4,47 @@
 @Author: Well
 @Date: 2014-01-27
 """
+
+#习题 16：读写文件
+
 from sys import argv
-from os.path import exists
 
-script, from_file,to_file = argv
+#filename 设置为 neil_txt_sample3.txt
+script, filename = argv
 
-print"copy from %s to %s" % (from_file, to_file)
+print "Erase %r" % filename
+print "If you don't want that, hit CTRL-C."
+print "If you do want that,hit RETURN."
 
-in_file = open(from_file)
-in_data = in_file.read()
+raw_input("?")
 
-print "the input file is %d byte long" % len(in_data)
+print "Opening the file"
+target = open(filename, 'r+')
 
-print "does the output file exist? %s" % exists(to_file)
-print "ready, hit return to continue, ctrl-c to abort."
-raw_input()
+print "Truncating the file.Goodbye!"
+target.truncate()
 
-out_file = open(to_file,'w')
-out_file.write(in_data)
+print "Ask you for three lines."
 
-print "Alright,all done."
+line1 = raw_input("line1:")
+line2 = raw_input("line2:")
+line3 = raw_input("line3:")
 
-out_file.close()
-in_file.close()
+print "Write three lines to the file."
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+target.seek(0)
+for line in target:
+    print line
+
+print "Finally, close it"
+
+target.close()
+
 

@@ -39,8 +39,7 @@ else:
     print ('find end')
 
 j = 0
-time_file = time.strftime('%y%m%d-%H%M%S', time.localtime(time.time()))
-folder = time.strftime('%y%m%d-%H%M%S', time.localtime())
+time_file = time.strftime('%y%m%d-%H%M%S', time.localtime())
 folder_full = os.getcwd() + '\\'+'v2ex'+'\\'+time_file+'\\'
 os.makedirs(r'%s' % folder_full)
 print ('new file complete')
