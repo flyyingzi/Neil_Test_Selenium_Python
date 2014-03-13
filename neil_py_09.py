@@ -22,20 +22,29 @@ def rewind(f):
 def print_a_line(line_count, f):
     print line_count, f.readline(),
 
+
 current_file = open(input_file)
+current_line_number = len(current_file.readlines())
+# 计算行数两种方法：
+# current_line_number = current_file.read().count('\n')
+# rewind(current_file)
 
 print ("Print the whole file: \n")
 print_all(current_file)
 
 print("Rewind, kind of like a tape")
+
 rewind(current_file)
+
 print("Print all lines")
 
 current_line = 1
-while current_line < len(current_file.readlines()):
+
+while current_line <= current_line_number:
     print_a_line(current_line, current_file)
     current_line += 1
-    print current_line, len(current_file.readlines())
+
+current_file.close()
 
 
 
