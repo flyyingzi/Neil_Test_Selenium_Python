@@ -6,6 +6,7 @@ import time
 import os
 from HTMLParser import HTMLParser
 
+
 def strip_tags(html):
     html = html.strip()
     html = html.strip("\n")
@@ -15,6 +16,7 @@ def strip_tags(html):
     parse.feed(html)
     parse.close()
     return "".join(result)
+
 
 i = 0
 url = [''] * 10
@@ -40,7 +42,7 @@ else:
 
 j = 0
 time_file = time.strftime('%y%m%d-%H%M%S', time.localtime())
-folder_full = os.getcwd() + '\\'+'v2ex'+'\\'+time_file+'\\'
+folder_full = os.getcwd() + '\\' + 'v2ex' + '\\' + time_file + '\\'
 os.makedirs(r'%s' % folder_full)
 print ('new file complete')
 
@@ -48,16 +50,12 @@ while j < i:
     content = urllib.urlopen(url[j]).read()
     content_start = content.find(r'topic_content">')
     content_end = content.find(r'</div>', content_start)
-    content_page = content[(content_start+len('topic_content">')): content_end]
+    content_page = content[(content_start + len('topic_content">')): content_end]
     content_page = strip_tags(content_page)
-    open(folder_full+str(j+1).zfill(2)+'_'+url[j][-6:] + '.txt', 'w+').write(content_page)
-    print ('%d page(s) download complete' % (j+1))
+    open(folder_full + str(j + 1).zfill(2) + '_' + url[j][-6:] + '.txt', 'w+').write(content_page)
+    print ('%d page(s) download complete' % (j + 1))
     j += 1
     time.sleep(7)
 
 else:
     print ('all download complete, there are %d pages' % j)
-
-
-
-

@@ -6,8 +6,7 @@
 """
 
 #习题25: 更多更多的练习 -2
-
-import neil_py_12
+from learn_python_on_the_hard_way import neil_py_12
 
 sentence = "all good things come to those who wait"
 words = neil_py_12.break_words(sentence)

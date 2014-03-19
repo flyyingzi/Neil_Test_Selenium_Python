@@ -25,8 +25,10 @@ cheese_and_crackers(amount_of_cheese, amount_of_crackers)
 
 
 print("Do math inside too:")
-cheese_and_crackers(10+20, 5+6)
+# noinspection PyPep8,PyPep8
+cheese_and_crackers(10 + 20, 5 + 6)
 
 
 print "Combine the two, variables and math:"
-cheese_and_crackers(amount_of_cheese+100, amount_of_crackers+1000)
+# noinspection PyPep8,PyPep8
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
