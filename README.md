@@ -4,6 +4,8 @@ neilpytest
 Automated test by using code language python.
 
 
+几个项目目录的介绍：
+
 1. ce_shi_qu_dong_kai_fa（需重构）
   这个项目是根据《测试驱动开发》写的，能跑通，但是结构需要重构。
 
