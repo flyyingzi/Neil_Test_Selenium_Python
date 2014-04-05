@@ -22,3 +22,4 @@ Automated test by using code language python.
     这个项目是python + selenium webdriver进行web测试自动化，主要受虫师（ http://126.am/CSKmA2 ）和乙醇（ http://126.am/UXNni0 ）的影响，进行完善。
   
 
+ps：个人有道导航：http://note.youdao.com/share/?id=862bf8cabfce5a3a26cdda33feda37f0&type=note
