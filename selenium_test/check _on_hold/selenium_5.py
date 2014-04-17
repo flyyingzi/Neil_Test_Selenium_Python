@@ -5,31 +5,46 @@
 @Date: 2014 - 04 - 03
 """
 
-# http://www.cnblogs.com/fnng/p/3193955.html
-# 定位一组元素
+# 补
+# http://www.cnblogs.com/fnng/p/3202299.html
+# 操作对象：
+# · click 点击对象
+# · send_keys 在对象上模拟按键输入
+# · clear 清除对象的内容，如果可以的话
+#
+# WebElement  另一些常用方法：
+#
+# · text  获取该元素的文本
+# · submit  提交表单 (和click 效果相同)
+# · get_attribute  获得属性值
 
-from selenium_test import webdriver
-from selenium_test.webdriver.support.ui import WebDriverWait
-import time
-import os
 
-dr = webdriver.Chrome()
-file_path = 'file:///' + os.path.abspath('level_locate.html')
-dr.get(file_path)
+from selenium import webdriver
+import time  # 引入time函数
 
-#点击Link1链接（弹出下拉列表）
-dr.find_element_by_link_text('Link1').click()
+browser = webdriver.Chrome()
+url = "http://www.baidu.com"  # 将url分离，单独配置
 
-#找到id 为dropdown1的父元素
-WebDriverWait(dr, 10).until(lambda the_driver: the_driver.find_element_by_id('dropdown1').is_displayed())
-#在父亲元件下找到link为Action的子元素
-menu = dr.find_element_by_id('dropdown1').find_element_by_link_text('Action')
+browser.get(url)
+time.sleep(1)  # 休眠1秒
 
-#鼠标定位到子元素上
-webdriver.ActionChains(dr).move_to_element(menu).perform()
+browser.find_element_by_id("kw1").send_keys("clear")
+time.sleep(1)  # 休眠1秒
+browser.find_element_by_id("kw1").clear()
+time.sleep(1)  # 休眠1秒
+browser.find_element_by_id("kw1").send_keys("selenium")
+time.sleep(1)  # 休眠1秒
 
-time.sleep(2)
+# text 用法
+data = browser.find_element_by_id("cp").text
+print data   # 打印信息
 
-dr.quit()
+browser.find_element_by_id("su1").click()
+time.sleep(1)  # 休眠1秒
+
+
+browser.quit()
+
+
 
 

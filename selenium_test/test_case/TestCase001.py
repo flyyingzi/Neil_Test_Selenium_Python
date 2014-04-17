@@ -20,8 +20,9 @@ class MyTestCase(unittest.TestCase):
         print "start test", time.strftime("%Y:%m:%d:%H:%M:%S", time.localtime(time.time()))
         # 浏览器初始化
         self.browser = webdriver.Chrome()
+        self.browser.maximize_window()
         # 主页地址
-        self.test_url = 'http://127.0.0.1/wordpress/'
+        self.base_url = 'http://127.0.0.1/wordpress/'
         # 从data文件夹下的文本读取信息(相对路径)
         source = file(r"C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\data\username.txt", "r")
         source2 = file(r"C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\data\password.txt", "r")
@@ -38,7 +39,7 @@ class MyTestCase(unittest.TestCase):
         print "open browser"
 
         # 打开wordpress首页
-        self.browser.get(self.test_url)
+        self.browser.get(self.base_url)
         # 跳转登录页面
         self.browser.find_element_by_partial_link_text(u"登录").click()
         # 调用login()
@@ -56,7 +57,7 @@ class MyTestCase(unittest.TestCase):
 
             file_name = os.path.basename(__file__).split('.')[0]
             png_path = r'C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\png'
-            file_path = png_path + '\\'+ file_name + '.png'
+            file_path = png_path + '\\' + file_name + '.png'
             # if os.path.exists(file_path):
             #     os.remove(file_path)
             #     print "remove"

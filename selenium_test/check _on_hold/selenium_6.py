@@ -2,49 +2,33 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 03
+@Date: 2014 - 04 - 09
 """
 
-# 补
-# http://www.cnblogs.com/fnng/p/3202299.html
-# 操作对象：
-# · click 点击对象
-# · send_keys 在对象上模拟按键输入
-# · clear 清除对象的内容，如果可以的话
-#
-# WebElement  另一些常用方法：
-#
-# · text  获取该元素的文本
-# · submit  提交表单 (和click 效果相同)
-# · get_attribute  获得属性值
+from selenium import webdriver
+import time
 
-
-from selenium_test import webdriver
-import time  # 引入time函数
+url = "http://list.taobao.com/itemlist/default.htm?cat=50000671&viewIndex=1&as=0&atype=b&style=grid&same_info=1&isnew=2&tid=0&_input_charset=utf-8"
 
 browser = webdriver.Chrome()
-url = "http://www.baidu.com"  # 将url分离，单独配置
-
 browser.get(url)
-time.sleep(1)  # 休眠1秒
+time.sleep(5)
+browser.maximize_window()
 
-browser.find_element_by_id("kw1").send_keys("clear")
-time.sleep(1)  # 休眠1秒
-browser.find_element_by_id("kw1").clear()
-time.sleep(1)  # 休眠1秒
-browser.find_element_by_id("kw1").send_keys("selenium")
-time.sleep(1)  # 休眠1秒
+js1 = "return document.documentElement.scrollHeight;"  # 滑动条的位置值
+js2 = "scroll(0,10000);"  # 滑动滚动条到页面底
+scroll_height = 0
 
-# text 用法
-data = browser.find_element_by_id("cp").text
-print data   # 打印信息
+while scroll_height < 10200:
+    browser.execute_script(js2)
+    time.sleep(3)
+    scroll_height = browser.execute_script(js1)
 
-browser.find_element_by_id("su1").click()
-time.sleep(1)  # 休眠1秒
-
+time.sleep(3)
+parent_ele = browser.find_element_by_css_selector("a.J_Ajax.btn.next")  # 先查找父元素
+parent_ele.find_element_by_tag_name("span")  # 再找子元素
+#browser.find_element_by_xpath("a[@class='J_Ajax btn next']").click()
 
 browser.quit()
 
-
-
-
+13313875128

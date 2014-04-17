@@ -2,52 +2,30 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 02
+@Date: 2014 - 04 - 03
 """
 
-#http://www.cnblogs.com/fnng/p/3183777.html
-# 简单对象定位:
-# · id
-# · name
-# · class name
-# · link text
-# · partial link text
-# · tag name
-# · xpath
-# · css selector
+# 补
+# http://www.cnblogs.com/fnng/p/3190966.html
+# 定位一组元素
 
-from selenium_test import webdriver
-import time  # 引入time函数
+from selenium import webdriver
+import time
+import os
 
 browser = webdriver.Chrome()
-url = "http://www.baidu.com"  # 将url分离，单独配置
+ # 绝对路径
+file_path = os.path.dirname(__file__) + '\\' + 'checkbox.html'
+print os.path.dirname(__file__)
+print file_path
+browser.get(file_path)
 
-browser.get(url)
-time.sleep(1)  # 休眠1秒
+# 选择页面上所有的input，然后从中过滤出所有的checkbox并勾选之
+inputs = browser.find_elements_by_tag_name('input')
+for input_ in inputs:
+    if input_.get_attribute('type') == 'checkbox':
+        input_.click()
 
-
-#通过id方式定位
-browser.find_element_by_id("kw1").send_keys("selenium")
-
-#通过name方式定位
-browser.find_element_by_name("wd").send_keys("selenium")
-
-#通过tag name方式定位
-browser.find_element_by_tag_name("input").send_keys("selenium")
-
-#通过class name 方式定位
-browser.find_element_by_class_name("s_ipt")
-
-#通过CSS方式定位
-browser.find_element_by_css_selector("#kw1").send_keys("selenium")
-
-#通过xpath方式定位
-browser.find_element_by_xpath("//input[@id='kw1']").send_keys("selenium")
-
-browser.find_element_by_id("su1").click()
-time.sleep(1)  # 休眠1秒
+time.sleep(2)
 
 browser.quit()
-
-
-
