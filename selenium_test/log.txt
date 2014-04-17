@@ -1,0 +1,68 @@
+success read username and password from admin_passport()
+admin
+admin
+success read username and password from user_passport()
+user001
+user001
+Traceback (most recent call last):
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\loop_reader.py", line 46, in <module>
+    read_txt()
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\loop_reader.py", line 26, in read_txt
+    source = file("..\data\username.txt", "r")
+IOError: [Errno 2] No such file or directory: '..\\data\\username.txt'
+start test 2014:04:16:19:09:41
+E
+======================================================================
+ERROR: test_login (__main__.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\TestCase001.py", line 21, in setUp
+    self.browser = webdriver.Chrome()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 65, in __init__
+    keep_alive=True)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 72, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 115, in start_session
+    'desiredCapabilities': desired_capabilities,
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 166, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 164, in check_response
+    raise exception_class(message, screen, stacktrace)
+WebDriverException: Message: u'unknown error: unable to discover open window in chrome\n  (Session info: chrome=34.0.1847.116)\n  (Driver info: chromedriver=2.9.248315,platform=Windows NT 6.3 x86_64)' 
+
+----------------------------------------------------------------------
+Ran 1 test in 4.603s
+
+FAILED (errors=1)
+pending
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+success read username and password from admin_passport()
+admin
+admin
+success read username and password from user_passport()
+user001
+user001
+Traceback (most recent call last):
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\loop_reader.py", line 46, in <module>
+    read_txt()
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\loop_reader.py", line 26, in read_txt
+    source = file("..\data\username.txt", "r")
+IOError: [Errno 2] No such file or directory: '..\\data\\username.txt'
+start test 2014:04:16:19:10:14
+E
+======================================================================
+ERROR: test_login (__main__.MyTestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\test_case\TestCase001.py", line 25, in setUp
+    source = file("..\data\username.txt", "r")
+IOError: [Errno 2] No such file or directory: '..\\data\\username.txt'
+
+----------------------------------------------------------------------
+Ran 1 test in 3.362s
+
+FAILED (errors=1)

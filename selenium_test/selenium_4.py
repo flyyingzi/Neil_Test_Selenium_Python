@@ -9,7 +9,7 @@
 # http://www.cnblogs.com/fnng/p/3190966.html
 # 定位一组元素
 
-from selenium import webdriver
+from selenium_test import webdriver
 import time
 import os
 

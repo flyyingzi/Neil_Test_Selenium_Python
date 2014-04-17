@@ -10,7 +10,7 @@ Automated test by using code language python.
     这个项目是根据《测试驱动开发》（/docs 目录下有对应的PDF）写的，书上写的是java范例，已改成python；用例基本能跑通，但是结构需要重构。
 
 2. learn_python_on_the_hard_way （快完成）
-    这个项目是根据《笨方法学python》（/docs 目录下有对应的PDF）写的，算是python入门教程。
+    这个项目是根据《笨方法学python》（/docs 目录下有对应的PDF）写的，在线地址（http://www.jb51.net/shouce/Pythonbbf/latest/），算是python入门教程。
 
 3. monkey_runner （开始完善）
     这个项目是python + monkeyrunner + android，根据“百度金阳光”的YY课程（ http://126.am/5MtRP2 ），开始写的。

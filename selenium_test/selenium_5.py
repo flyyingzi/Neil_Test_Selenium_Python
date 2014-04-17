@@ -8,8 +8,8 @@
 # http://www.cnblogs.com/fnng/p/3193955.html
 # 定位一组元素
 
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium_test import webdriver
+from selenium_test.webdriver.support.ui import WebDriverWait
 import time
 import os
 

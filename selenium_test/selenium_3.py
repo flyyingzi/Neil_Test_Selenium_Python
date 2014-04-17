@@ -16,7 +16,7 @@
 # · xpath
 # · css selector
 
-from selenium import webdriver
+from selenium_test import webdriver
 import time  # 引入time函数
 
 browser = webdriver.Chrome()

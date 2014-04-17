@@ -10,14 +10,19 @@
 # 设置浏览器固定宽、高
 # 操控浏览器前进、后退
 
-from selenium import webdriver
+from selenium_test import webdriver
 import time  # 引入time函数
+import sys
+
+reload(sys)
+sys.setdefaultencoding("utf-8")  # 默认为utf-8
 
 browser = webdriver.Chrome()
 url = "http://www.baidu.com"  # 将url分离，单独配置
 
+
 browser.get(url)
-title = browser.title.encode("utf-8")
+title = browser.title
 print"打开页面 %s ,页面的标题是: %s " % (url, title)  # 把页面title 打印出来
 time.sleep(1)  # 休眠1秒
 
@@ -35,7 +40,9 @@ time.sleep(1)  # 休眠1秒
 
 
 # 返回操作
-url2 = browser.current_url.encode("utf-8")  # 搜索页地址,并转码
+url2 = browser.current_url  # 搜索页地址
+url2 = browser.current_url  # 搜索页地址
+print url2
 print "返回到主页 %s" % url
 browser.back()
 time.sleep(1)  # 休眠1秒
