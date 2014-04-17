@@ -1,6 +1,11 @@
-/.idea/
-v2ex/
+# 忽略所有类型文件
 *.pyc
-/selenium_test/png/*.png
-/selenium_test/report/*.html
+
+# 忽略文件夹
+.idea/
+pa_chong/v2ex/
+
+# 忽略文件下的类型文件
+selenium_test/png/*.png
+selenium_test/report/*.html
 
