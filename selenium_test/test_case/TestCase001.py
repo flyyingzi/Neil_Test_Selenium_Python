@@ -53,12 +53,14 @@ class MyTestCase(unittest.TestCase):
             self.assertTrue('admin' in greeting_link.text)
 
         finally:
-            # 原截图文件存在的话，get_screenshot_as_file（）会覆盖更新即可
-            file_path = r"C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\png\TestCase001.png"
+
+            file_name = os.path.basename(__file__).split('.')[0]
+            png_path = r'C:\Users\wei\Documents\GitHub\neilpytest\selenium_test\png'
+            file_path = png_path + '\\'+ file_name + '.png'
             # if os.path.exists(file_path):
             #     os.remove(file_path)
             #     print "remove"
-            # 截图
+            # 截图；原截图文件存在的话，get_screenshot_as_file（）会覆盖更新
             self.browser.get_screenshot_as_file(file_path)
 
 

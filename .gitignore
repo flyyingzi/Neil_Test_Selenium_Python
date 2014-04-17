@@ -1,4 +1,6 @@
 /.idea/
 v2ex/
 *.pyc
+selenium_test/png/*.png
+selenium_test/report/*.html
 
