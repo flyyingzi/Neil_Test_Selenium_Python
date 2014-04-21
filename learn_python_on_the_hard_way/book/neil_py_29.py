@@ -2,7 +2,7 @@
 
 """
 @Author: Well
-@Date: 2014 - 03 - 28
+@Date: 2013 - 03 - 28
 """
 
 # 习题44： 继承 inheritance VS 合成 Composition

@@ -2,49 +2,54 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 03
+@Date: 2014 - 04 - 19
 """
 
-# 补
-# http://www.cnblogs.com/fnng/p/3202299.html
-# 操作对象：
-# · click 点击对象
-# · send_keys 在对象上模拟按键输入
-# · clear 清除对象的内容，如果可以的话
-#
-# WebElement  另一些常用方法：
-#
-# · text  获取该元素的文本
-# · submit  提交表单 (和click 效果相同)
-# · get_attribute  获得属性值
 
+# 5 键盘事件
+# Key()类提供方法
 
 from selenium import webdriver
-import time  # 引入time函数
+from selenium.webdriver.common.keys import Keys
+import time
 
+
+base_url = "http://www.baidu.com"
 browser = webdriver.Chrome()
-url = "http://www.baidu.com"  # 将url分离，单独配置
 
-browser.get(url)
-time.sleep(1)  # 休眠1秒
+browser.get(base_url)
 
-browser.find_element_by_id("kw1").send_keys("clear")
-time.sleep(1)  # 休眠1秒
-browser.find_element_by_id("kw1").clear()
-time.sleep(1)  # 休眠1秒
-browser.find_element_by_id("kw1").send_keys("selenium")
-time.sleep(1)  # 休眠1秒
+# 输入框输入内容
+kw1 = browser.find_element_by_id('kw1')
+kw1.send_keys('seleniumm')
+time.sleep(3)
 
-# text 用法
-data = browser.find_element_by_id("cp").text
-print data   # 打印信息
+# 删除一个m
+kw1.send_keys(Keys.BACK_SPACE)
+time.sleep(3)
 
-browser.find_element_by_id("su1").click()
-time.sleep(1)  # 休眠1秒
+# 输入空格键和“教程”
+kw1.send_keys(Keys.SPACE)
+kw1.send_keys(u'教程')
+time.sleep(3)
+
+# ctrl + a 全选输入框内容
+kw1.send_keys(Keys.CONTROL, 'a')
+time.sleep(3)
+
+# ctrl + x 剪切输入框内容
+kw1.send_keys(Keys.CONTROL, 'x')
+time.sleep(3)
+
+# 在输入框中，ctrl + v 粘贴内容
+kw1.send_keys(Keys.CONTROL, 'v')
+time.sleep(3)
+
+# 回车键 代替 click（）
+kw1.send_keys(Keys.ENTER)
+time.sleep(3)
 
 
+# 浏览器退出
 browser.quit()
-
-
-
 

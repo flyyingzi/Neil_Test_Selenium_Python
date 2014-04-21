@@ -2,7 +2,7 @@
 
 """
 @Author: Well
-@Date: 2014-01-26
+@Date: 2013-01-26
 """
 #习题14：提示和传递
 # noinspection PyPep8

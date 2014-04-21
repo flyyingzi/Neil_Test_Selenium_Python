@@ -2,30 +2,37 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 12
+@Date: 2014 - 04 - 03
 """
+
+# 8 定位一组元素
 
 from selenium import webdriver
 import time
-import os.path
-
-# 上传测试
+import os
 
 browser = webdriver.Chrome()
-url1 = "https://anonfiles.com/"
-# file_path = os.path.normcase(u"C:\\Users\\wei\\Desktop\\测试1.txt")
-file_path = u"C:\\Users\\wei\\Desktop\\测试1.txt"
+ # 绝对路径
+file_path = os.path.dirname(__file__) + '\\' + 'html' + '\\' + 'checkbox.html'
+print os.path.dirname(__file__)
 print file_path
+browser.get(file_path)
 
-browser.get(url1)
-browser.maximize_window()
-browser.find_element_by_class_name("long_input").send_keys(file_path)
-time.sleep(2)
-browser.find_element_by_name("upl").click()
-time.sleep(3)
+# 选择页面上所有的input，然后从中过滤出所有的checkbox并勾选之
+inputs = browser.find_elements_by_tag_name('input')
+for input_ in inputs:
+    if input_.get_attribute('type') == 'checkbox':
+        input_.click()
+        time.sleep(2)
 
+# 断言
+no = 1
+try:
+    for input_ in inputs:
+        if input_.get_attribute('type') == 'checkbox':
+            assert input_.is_selected()
+            print "第%s个测试ok" % no
+            no += 1
 
-
-
-
-
+finally:
+    browser.quit()

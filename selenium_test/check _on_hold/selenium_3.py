@@ -2,30 +2,39 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 03
+@Date: 2014 - 04 - 17
 """
 
-# 补
-# http://www.cnblogs.com/fnng/p/3190966.html
-# 定位一组元素
+# 3 操作测试对象
+# clear() send_keys() click() submit()
+# size text get_attribute() is_displayed()
 
 from selenium import webdriver
 import time
-import os
 
+
+base_url = "http://www.baidu.com/"
 browser = webdriver.Chrome()
- # 绝对路径
-file_path = os.path.dirname(__file__) + '\\' + 'checkbox.html'
-print os.path.dirname(__file__)
-print file_path
-browser.get(file_path)
+browser.get(base_url)
 
-# 选择页面上所有的input，然后从中过滤出所有的checkbox并勾选之
-inputs = browser.find_elements_by_tag_name('input')
-for input_ in inputs:
-    if input_.get_attribute('type') == 'checkbox':
-        input_.click()
+# size
+size = browser.find_element_by_id("kw1").size
+print size
 
-time.sleep(2)
+# text
+text = browser.find_element_by_name("tj_baike").text
+print text
+
+# get_attribute()
+# 输入输入框中的输入值
+browser.find_element_by_id('kw1').send_keys("selenium test")
+attribute = browser.find_element_by_id('kw1').get_attribute('value')
+time.sleep(5)
+print attribute
+
+# is_displayed()
+is_displayed = browser.find_element_by_name('ie').is_selected()
+print is_displayed
 
 browser.quit()
+

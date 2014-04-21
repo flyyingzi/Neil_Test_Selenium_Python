@@ -5,31 +5,59 @@
 @Date: 2014 - 04 - 03
 """
 
-# http://www.cnblogs.com/fnng/p/3193955.html
-# 定位一组元素
+# 鼠标事件
+# context_click()
+# double_click()
+# drag_and_drop()
+# move_to_element()
+# click_and_hold()
 
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 import time
-import os
+from selenium.webdriver.common.keys import Keys
 
-dr = webdriver.Chrome()
-file_path = 'file:///' + os.path.abspath('level_locate.html')
-dr.get(file_path)
+base_url = "http://www.youdao.com"
+browser = webdriver.Chrome()
 
-#点击Link1链接（弹出下拉列表）
-dr.find_element_by_link_text('Link1').click()
+browser.get(base_url)
+# 定位到搜索输入框
+input_ = browser.find_element_by_id('query')
+time.sleep(3)
 
-#找到id 为dropdown1的父元素
-WebDriverWait(dr, 10).until(lambda the_driver: the_driver.find_element_by_id('dropdown1').is_displayed())
-#在父亲元件下找到link为Action的子元素
-menu = dr.find_element_by_id('dropdown1').find_element_by_link_text('Action')
+# context_click()
+ActionChains(browser).context_click(input_).perform()
+time.sleep(3)
 
-#鼠标定位到子元素上
-webdriver.ActionChains(dr).move_to_element(menu).perform()
+# double_click()
+input_.send_keys('hello selenium')
+time.sleep(3)
+# 双击应有全选文字效果
+ActionChains(browser).double_click(input_).perform()
+time.sleep(3)
 
-time.sleep(2)
+# drag_and_drop()
+# 找不到例子
+# mouse_from = browser.find_element_by_tag_name('')
+# mouse_to = browser.find_elements_by_css_selector('')
+# ActionChains(browser).drag_and_drop(mouse_from, mouse_to).perform()
+# time.sleep(3)
 
-dr.quit()
+# move_to_element()
+above = browser.find_element_by_partial_link_text(u'有道云笔记')
+ActionChains(browser).move_to_element(above).perform()
+time.sleep(3)
+
+# click_and_hold()
+# 找不到例子
+# ActionChains(browser).click_and_hold("").perform()
+
+browser.quit()
+
+
+
+
+
+
 
 

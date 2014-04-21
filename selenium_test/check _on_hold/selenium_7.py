@@ -2,30 +2,34 @@
 
 """
 @Author: Well
-@Date: 2014 - 04 - 11
+@Date: 2014 - 04 - 19
 """
 
-#  弹出页面
+
+# 7 设置等待时间
+# sleep() 固定时间
+# implicitly_wait() 隐性等待
+# WebDriverWait()  一段时间内，检查元素是否存在。
 
 from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 import time
 
-profile = webdriver.FirefoxProfile()
-profile.accept_untrusted_certs = True
-#browser = webdriver.Firefox(firefox_profile=profile)
-browser = webdriver.Ie()
-#browser = webdriver.Chrome()
+base_url = "http://www.baidu.com"
+browser = webdriver.Chrome()
 
-url1 = "http://piao.fanli.com/?source=12306"
-url2 = "https://www.cacert.org/"
+browser.get(base_url)
+
+# WebDriverWait()方法使用 和until, until_not 搭配
+element = WebDriverWait(browser, 10).until(lambda b: browser.find_element_by_id('kw1'))
+element.send_keys('selenium')
 
 
-browser.get(url2)
-browser.maximize_window()
+# 智能等待
+browser.implicitly_wait(30)
+browser.find_element_by_id('su1').click()
+
+# 固定时间
 time.sleep(3)
 
-
-browser.find_element_by_partial_link_text("继续浏览此网站").click()
-time.sleep(3)
-
-# browser.close()
+browser.quit()
