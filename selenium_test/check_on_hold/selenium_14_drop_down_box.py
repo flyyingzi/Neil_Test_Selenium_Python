@@ -13,11 +13,12 @@ import time
 
 
 # 数据初始化
-base_url = os.path.dirname(__file__) + '\\' + 'html' + '\\' + 'drop_down.html'
+base_url = os.path.dirname(__file__) + '/html/' + 'drop_down.html'
 browser = webdriver.Chrome()
 
-# 打开html
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
 
 # 定位到下拉框
 browser.find_element_by_id('ShippingMethod').click()

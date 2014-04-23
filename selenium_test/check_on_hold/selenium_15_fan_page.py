@@ -14,11 +14,13 @@ import time
 
 
 # 数据初始化
-base_url = os.path.dirname(__file__) + '\\' + 'html' + '\\' + 'fan_page.html'
+base_url = os.path.dirname(__file__) + '/html/' + 'fan_page.html'
 browser = webdriver.Chrome()
 
-# 打开html
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
+
 # 计算页数
 total_pages = browser.find_element_by_tag_name('select').find_elements_by_tag_name('option')
 print "一共%s页" %(len(total_pages))

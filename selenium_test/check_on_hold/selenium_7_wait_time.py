@@ -15,10 +15,13 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 
+# 数据初始化
 base_url = "http://www.baidu.com"
 browser = webdriver.Chrome()
 
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
 
 # WebDriverWait()方法使用 和until, until_not 搭配
 element = WebDriverWait(browser, 10).until(lambda b: browser.find_element_by_id('kw1'))
@@ -32,4 +35,5 @@ browser.find_element_by_id('su1').click()
 # 固定时间
 time.sleep(3)
 
+# 浏览器退出
 browser.quit()

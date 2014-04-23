@@ -10,10 +10,13 @@
 from selenium import webdriver
 import time
 
+# 数据初始化
 browser = webdriver.Chrome()
 base_url = 'http://www.youdao.com'
 
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
 
 # 获取当前窗口的句柄
 handle_1 = browser.current_window_handle
@@ -22,12 +25,21 @@ handle_1 = browser.current_window_handle
 browser.find_element_by_class_name('dict').click()
 
 # 获取所有窗口的句柄
-handle_2 = browser.current_window_handle
+handle_all = browser.window_handles
+handle_now = browser.current_window_handle
+# 循环判断窗口是否为“有道字典”的窗口
+for handle in handle_all:
+    if handle != handle_1:
+        browser.switch_to.window(handle)
+        print "switch to youdao dict"
+        time.sleep(3)
+        # 关闭浏览器tab
+        browser.close()
 
-time.sleep(5)
+# 回到浏览器初始tab
 browser.switch_to.window(handle_1)
-time.sleep(5)
 
+# 关闭浏览器
 browser.quit()
 
 

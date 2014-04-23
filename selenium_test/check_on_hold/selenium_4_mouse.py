@@ -17,10 +17,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 from selenium.webdriver.common.keys import Keys
 
+# 数据初始化
 base_url = "http://www.youdao.com"
 browser = webdriver.Chrome()
 
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
+
 # 定位到搜索输入框
 input_ = browser.find_element_by_id('query')
 time.sleep(3)
@@ -52,6 +56,7 @@ time.sleep(3)
 # 找不到例子
 # ActionChains(browser).click_and_hold("").perform()
 
+# 浏览器退出
 browser.quit()
 
 

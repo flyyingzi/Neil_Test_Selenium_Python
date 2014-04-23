@@ -12,10 +12,13 @@
 from selenium import webdriver
 import time
 
-
+# 数据初始化
 base_url = "http://www.baidu.com/"
 browser = webdriver.Chrome()
+
+# 打开浏览器
 browser.get(base_url)
+browser.maximize_window()
 
 # size
 size = browser.find_element_by_id("kw1").size
@@ -26,7 +29,7 @@ text = browser.find_element_by_name("tj_baike").text
 print text
 
 # get_attribute()
-# 输入输入框中的输入值
+# 获取输入框中的输入值
 browser.find_element_by_id('kw1').send_keys("selenium test")
 attribute = browser.find_element_by_id('kw1').get_attribute('value')
 time.sleep(5)
@@ -36,5 +39,6 @@ print attribute
 is_displayed = browser.find_element_by_name('ie').is_selected()
 print is_displayed
 
+# 浏览器退出
 browser.quit()
 
