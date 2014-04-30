@@ -38,6 +38,7 @@ for handle in handle_all:
 
 # 回到浏览器初始tab
 browser.switch_to.window(handle_1)
+browser.find_element_by_class_name('dict')
 
 # 关闭浏览器
 browser.quit()

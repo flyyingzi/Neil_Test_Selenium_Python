@@ -6,7 +6,7 @@
 """
 # 连接mysql数据库，进行操作
 # 用的是官方mysql connector/python
-# 参考网页：http://www.cnblogs.com/usa007lhy/p/3409718.html
+# 参考网页
 # http://www.cnblogs.com/fnng/p/3565912.html
 
 from mysql import connector

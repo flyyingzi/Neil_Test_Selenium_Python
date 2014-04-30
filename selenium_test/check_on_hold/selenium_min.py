@@ -9,6 +9,8 @@
 import unittest
 from selenium import webdriver
 import time
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
@@ -23,6 +25,7 @@ class MyTestCase(unittest.TestCase):
     def test_baidu(self):
         print "open browser"
         self.browser.get(self.base_url)
+        self.browser.maximize_window()
         self.browser.find_element_by_id("kw1").send_keys("selenium")
         self.browser.find_element_by_id("su1").click()
         time.sleep(3)
@@ -31,7 +34,7 @@ class MyTestCase(unittest.TestCase):
 
         try:
             title = self.browser.title
-            self.assertTrue(u'selenium_百度搜索' in title )
+            self.assertTrue(u'selenium_百度搜索' in title)
 
         finally:
             self.browser.get_screenshot_as_file('png\\test001.png')

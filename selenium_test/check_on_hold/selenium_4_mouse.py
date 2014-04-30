@@ -31,6 +31,7 @@ time.sleep(3)
 
 # context_click()
 ActionChains(browser).context_click(input_).perform()
+ActionChains(browser).move_by_offset(0, 0).click().perform()
 time.sleep(3)
 
 # double_click()

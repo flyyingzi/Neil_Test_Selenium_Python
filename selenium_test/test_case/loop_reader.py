@@ -7,6 +7,7 @@
 
 import userinfo
 import csv
+import os
 
 # 通过dict获取账号信息
 def read_dict():
@@ -23,9 +24,10 @@ def read_list():
 
 # 从.txt文件中读取信息(相对路径)
 def read_txt():
-    source = file("..\data\username.txt", "r")
+
+    source = file(os.path.pardir + "\data\username.txt", "r")
     test_username = source.read()
-    source2 = file("..\data\password.txt", "r")
+    source2 = file(os.path.pardir + "\data\password.txt", "r")
     test_password = source2.read()
 
     source.close()
@@ -34,7 +36,8 @@ def read_txt():
 
 # 从csv文件中读取信息（相对路径）
 def read_csv():
-    my_file = '..\data\userinfo.csv'
+
+    my_file = os.path.pardir + '\data\userinfo.csv'
     data = csv.reader(file(my_file, 'rb'))
     for user_list in data:
         for user in user_list:
