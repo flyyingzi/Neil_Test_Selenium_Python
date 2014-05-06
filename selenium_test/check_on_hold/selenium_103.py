@@ -12,7 +12,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 base_url = "http://www.baidu.com"
 browser = webdriver.Remote(
-    command_executor="http://192.168.125.14:4444/wd/hub",
+    command_executor="http://101.225.54.169:4444/wd/hub",
     desired_capabilities=DesiredCapabilities.INTERNETEXPLORER)
 
 browser.get(base_url)

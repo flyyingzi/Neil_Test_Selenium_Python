@@ -5,7 +5,8 @@
 @Date: 2014 - 04 - 30
 """
 
-# 1 测试计算器
+# 截图
+
 from selenium import webdriver
 import os
 import time
@@ -22,22 +23,11 @@ desired_caps['app-package'] = 'com.android.calculator2'
 desired_caps['app-activity'] = '.Calculator'
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-# 点击计算器上的数字和运算符
+time.sleep(6)
 
-driver.find_element_by_name('1').click()
-time.sleep(1)
-driver.find_element_by_name(u'删除').click()
-time.sleep(1)
-driver.find_element_by_name('2').click()
-time.sleep(1)
-driver.find_element_by_name('+').click()
-time.sleep(1)
-driver.find_element_by_name('1').click()
-time.sleep(1)
-driver.find_element_by_name('=').click()
-time.sleep(1)
+file_name = os.path.basename(__file__).split('.')[0]
+dir_name = os.path.dirname(__file__)
+driver.get_screenshot_as_file(dir_name + '/png/' + file_name + '.png')
+time.sleep(6)
+
 driver.quit()
-
-
-
-

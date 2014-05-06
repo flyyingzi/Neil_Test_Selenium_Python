@@ -5,10 +5,10 @@
 @Date: 2014 - 04 - 28
 """
 
-import os
-from selenium import webdriver
+# cmd
 
+import os
 command = "dir"
 a = os.system(command)
 
-print a.decode('utf-8').encode('gb2312')
+print a

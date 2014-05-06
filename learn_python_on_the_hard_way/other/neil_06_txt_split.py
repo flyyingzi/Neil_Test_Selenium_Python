@@ -22,7 +22,7 @@ dir_ = os.path.dirname(__file__)
 # print file2
 #
 # # 绝对路径
-# file3 = os.path.abspath(__file__)
+#file3 = os.path.abspath(__file__)
 # print file3
 
 # txt文件的绝对路径
