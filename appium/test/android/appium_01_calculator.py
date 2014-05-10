@@ -6,20 +6,22 @@
 """
 
 # 1 测试计算器
-from selenium import webdriver
+from appium import webdriver
 import os
 import time
+import desired_capabilities
 
-# Returns abs path relative to this file and not cwd
-PATH = lambda p: os.path.abspath(
-    os.path.join(os.path.dirname(__file__), p)
-)
-desired_caps = dict()
-desired_caps['device'] = 'android'
-desired_caps['browserName'] = ''
-desired_caps['version'] = '4.4'
-desired_caps['app-package'] = 'com.android.calculator2'
-desired_caps['app-activity'] = '.Calculator'
+
+# desired_caps = dict()
+# desired_caps['device'] = 'android'
+# desired_caps['browserName'] = ''
+# desired_caps['version'] = '4.4'
+# desired_caps['app-package'] = 'com.android.calculator2'
+# desired_caps['app-activity'] = '.Calculator'
+
+desired_caps = desired_capabilities.get_desired_capabilities()
+
+
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
 # 点击计算器上的数字和运算符

@@ -43,7 +43,6 @@ def read_csv():
         for user in user_list:
             print user
 
-
 read_dict()
 read_list()
 read_txt()
