@@ -59,6 +59,8 @@ def get_desired_capabilities(app):
             'platformName': 'Android',
             'platformVersion': '4.4',
             'deviceName': '0481575a0b4b78ce',
+            'appActivity': '.Calculator',
+            'appPackage': 'com.android.calculator2',
         }
 
     else:
