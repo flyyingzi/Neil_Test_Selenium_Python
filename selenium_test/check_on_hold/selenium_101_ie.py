@@ -6,6 +6,8 @@
 """
 
 #  自签名证书 （ie）
+#  将 证书 添加到 “受信任的根证书颁发机构”
+#  方法如：http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=601017
 
 from selenium import webdriver
 import time
@@ -19,9 +21,6 @@ browser.get(url2)
 browser.maximize_window()
 time.sleep(3)
 
-# 点击“继续浏览此网站”链接，继续访问
-browser.find_element_by_partial_link_text(u"继续浏览此网站").click()
-time.sleep(3)
 
 # 关闭浏览器
 browser.close()
