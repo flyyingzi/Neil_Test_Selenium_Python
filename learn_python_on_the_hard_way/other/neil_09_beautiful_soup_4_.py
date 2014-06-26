@@ -7,7 +7,7 @@
 
 
 # 学习BeautifulSoup
-# from: http://blog.csdn.net/a2bgeek/article/details/23252647
+# 引用网址: http://blog.csdn.net/a2bgeek/article/details/23252647
 
 import urllib
 from bs4 import BeautifulSoup

@@ -36,7 +36,7 @@ if os.path.isfile(apk_file) is True:
 browser.get(base_url)
 time.sleep(60)
 if os.path.isfile(apk_file) is True:
-    print "下载ok"
+    print u"下载ok"
 
 # 退出浏览器
 browser.quit()
