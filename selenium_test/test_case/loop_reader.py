@@ -10,17 +10,21 @@ import csv
 import os
 
 # 通过dict获取账号信息
+
+
 def read_dict():
     data = userinfo.admin_passport()
     for k, v in data.items():
         print k
         print v
 
+
 # 通过list获取账号信息
 def read_list():
     data = userinfo.user_passport()
     print data[0].split(',')[0]
     print data[0].split(',')[1]
+
 
 # 从.txt文件中读取信息(相对路径)
 def read_txt():
@@ -33,6 +37,7 @@ def read_txt():
     source.close()
     source2.close()
     print test_username, test_password
+
 
 # 从csv文件中读取信息（相对路径）
 def read_csv():

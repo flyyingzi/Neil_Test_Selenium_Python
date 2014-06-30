@@ -12,8 +12,8 @@ import time
 
 test_path = 'C:\\Users\\wei\\Documents\\GitHub\\neilpytest\\selenium_test\\test_case'
 
-def create_suite():
 
+def create_suite():
     test_unit = unittest.TestSuite()
     # 定义discover
     discover = unittest.defaultTestLoader.discover(test_path)

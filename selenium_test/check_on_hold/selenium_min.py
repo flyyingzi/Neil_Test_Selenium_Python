@@ -9,7 +9,6 @@
 import unittest
 from selenium import webdriver
 import time
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 class MyTestCase(unittest.TestCase):
