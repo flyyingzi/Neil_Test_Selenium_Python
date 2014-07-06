@@ -6,6 +6,7 @@
 @Date: 2014 - 06 - 18
 """
 
+# adb 判断优化
 
 import os
 

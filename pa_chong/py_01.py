@@ -1,6 +1,10 @@
-__author__ = 'wei'
+#coding: utf-8
 
-#coding:utf-8
+"""
+@Author: Well
+"""
+
+
 import urllib
 import time
 import os
@@ -52,7 +56,8 @@ while j < i:
     content_end = content.find(r'</div>', content_start)
     content_page = content[(content_start + len('topic_content">')): content_end]
     content_page = strip_tags(content_page)
-    open(folder_full + str(j + 1).zfill(2) + '_' + url[j][-6:] + '.txt', 'w+').write(content_page)
+    txt_file = folder_full + str(j + 1).zfill(2) + '_' + url[j][-6:] + '.txt'
+    open(txt_file, 'w+').write(content_page)
     print ('%d page(s) download complete' % (j + 1))
     j += 1
     time.sleep(7)
