@@ -6,7 +6,7 @@
 @Date: 2014 - 07 - 05
 """
 
-# 字典(Dictionary)
+# 引自： http://www.w3cschool.cc/python/python-dictionary.html
 
 """
 16.1 字典是另一种可变容器模型，且可存储任意类型对象，如其他容器模型。
