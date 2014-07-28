@@ -27,16 +27,17 @@ url = "http://www.baidu.com"  # 将url分离，单独配置
 browser.get(url)
 
 title = browser.title
-print"打开页面 %s ,页面的标题是: %s " % (url, title)  # 把页面title 打印出来
+print u"打开页面 %s ,页面的标题是: %s " % (url, title)  # 把页面title 打印出来
 time.sleep(1)  # 休眠1秒
 
-print "浏览器最大化"
+print u"浏览器最大化"
 browser.maximize_window()  # 将浏览器最大化
 time.sleep(1)  # 休眠1秒
 
-print "设置浏览器的宽为800，高为480"
+print u"设置浏览器的宽为800，高为480"
 browser.set_window_size(800, 480)  # 参数为像素值
 time.sleep(1)  # 休眠1秒
+
 
 browser.find_element_by_id("kw1").send_keys("selenium")
 browser.find_element_by_id("su1").click()
@@ -45,12 +46,12 @@ time.sleep(1)  # 休眠1秒
 # 返回操作
 url2 = browser.current_url  # 搜索页地址
 print url2
-print "返回到主页 %s" % url
+print u"返回到主页 %s" % url
 browser.back()
 time.sleep(1)  # 休眠1秒
 
 # 前进操作
-print "前进到搜索页 %s" % url2
+print u"前进到搜索页 %s" % url2
 browser.forward()
 time.sleep(1)  # 休眠1秒
 
