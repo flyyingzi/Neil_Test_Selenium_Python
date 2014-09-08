@@ -5,6 +5,7 @@
 @Date: 2014 - 04 - 30
 """
 
+# http://www.cnblogs.com/nbkhic/p/3657035.html
 
 from selenium import webdriver
 import time
@@ -28,6 +29,7 @@ browser.find_element_by_css_selector("#dom_arrivalDateDiv > div > input").send_k
 time.sleep(2)
 browser.find_element_by_css_selector("button.btn_txt[data-track*='国内搜索']").click()
 time.sleep(15)
+
 
 
 

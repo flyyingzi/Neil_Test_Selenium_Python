@@ -1,17 +1,16 @@
-#coding: utf-8
+# coding: utf-8
 
 """
 @Author: Well
 @Date: 2014 - 04 - 09
 """
-# 19 控制浏览器的滚动条
+
+# 19 javascript2 控制浏览器的滚动条
 
 """
 淘宝商品list页面比较高，滑动 滚动条以后，下面的元素才会加载
 # 故采用js方法”scroll(0,10000)“进行模拟滑动滚动条
 """
-
-
 
 from selenium import webdriver
 import time
