@@ -24,10 +24,5 @@
 - **应用：** 书籍《测试驱动开发》第一章中的例子,编写语言是python。
 - **来源：** [豆瓣地址](http://book.douban.com/subject/1230036/)
 
-### 4. robotium自动化测试, 编程语言为JAVA（刚挖坑）
-- **代码地址：** https://github.com/neiltest/neil_test_android_java
-- **应用：** 编程语言JAVA在android上的自动化测试, 准备学习robotium
-- **来源：** [robotium中文地址](http://www.robotium.cn/archives/210)
-
 
 ###附注：写在有道云笔记上的 [个人网站导航](http://note.youdao.com/share/?id=862bf8cabfce5a3a26cdda33feda37f0&type=note)
