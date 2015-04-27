@@ -5,7 +5,3 @@
 @Author: Well
 @Date: 2015 - 04 - 26
 """
-
-
-class MyCase(object):
-    pass
