@@ -12,10 +12,12 @@ import time
 
 # 数据初始化
 
-url2 = "https://vpn.rfchina.com/"
+url2 = u"https://service.fesco.com.cn/webquery/default.aspx"
 browser = webdriver.Chrome()
 
 # 打开浏览器
+webdriver.DesiredCapabilities.CHROME.setdefault('accept_ssl_certs', True)
+
 browser.get(url2)
 browser.maximize_window()
 time.sleep(3)

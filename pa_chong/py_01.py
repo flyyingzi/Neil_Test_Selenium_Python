@@ -1,9 +1,11 @@
-#coding: utf-8
+#!/usr/bin/env python
+# coding: utf-8
+
 
 """
 @Author: Well
+@Date: 2015 - 04 - 26
 """
-
 
 import urllib
 import time

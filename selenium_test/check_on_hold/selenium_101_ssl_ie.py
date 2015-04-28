@@ -13,8 +13,7 @@ from selenium import webdriver
 import time
 
 # 数据初始化
-url2 = "https://vpn.rfchina.com/
-# url2 = "https://www.cacert.org/"
+url2 = u"https://service.fesco.com.cn/webquery/default.aspx"
 browser = webdriver.Ie()
 
 # 打开浏览器
