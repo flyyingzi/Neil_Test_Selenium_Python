@@ -7,9 +7,9 @@
 """
 
 import unittest
-import HTMLTestRunner
 import os
 import time
+from common import HTMLTestRunner
 
 test_path = 'C:\\Users\\wei\\Documents\\GitHub\\neilpytest\\selenium_test\\test_case'
 
